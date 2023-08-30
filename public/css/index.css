@@ -1,0 +1,18 @@
+.test3{
+    display: flex;
+    justify-content: center;
+}
+
+.test {
+
+    background-color: red;
+}
+
+.test2{
+    
+    background-image: url(../img/socks.png);
+    width: 600px;
+    height: 600px;
+    background-size: cover;  
+    /* background-size: contain;  */
+}
