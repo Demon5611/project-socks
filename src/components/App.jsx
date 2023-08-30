@@ -2,22 +2,28 @@ import React from 'react';
 import { Route, Routes } from 'react-router-dom';
 import RegPage from './Pages/RegPage';
 import Header from './UI/Header';
+import Footer from './UI/Footer';
+import MainPage from './Pages/MainPage';
+import AuthPage from './Pages/AuthPage';
+import BasketPage from './Pages/BasketPage';
+import FavoritePage from './Pages/FavoritePage';
 
 
 
 export default function App()
 
 {
-
 return (  <>
     <Header   />
-  <div className="bg-dk-green pad-t-2 pad-s-1 pad-b-8 mar-b-16 c-white">
-    <div className="max-w-700 center">
+  <div className="container">
       <Routes>
-      <Route path="/" element={<RegPage />} />
+      <Route path="/" element={<MainPage />} />
+      <Route path="/reg" element={<RegPage />} />
+      <Route path="/auth" element={<AuthPage />} />
+      <Route path="/basket" element={<BasketPage />} />
+      <Route path="/favorite" element={<FavoritePage />} />
       </Routes>
-    </div>
-
   </div>
+  <Footer/>
 </>)
 }
