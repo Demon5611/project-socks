@@ -11,11 +11,11 @@ import AccountPage from './Pages/AccountPage';
 
 
 
-export default function App()
+export default function App({point})
 
 {
 return (  <>
-    <Header  user={user,point} />
+    <Header  user={user} />
   <div className="container">
       <Routes>
       <Route path="/" element={<MainPage point={point} />} />
