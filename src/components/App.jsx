@@ -11,14 +11,14 @@ import AccountPage from './Pages/AccountPage';
 
 
 
-export default function App({user})
+export default function App()
 
 {
 return (  <>
-    <Header  user={user} />
+    <Header  user={user,point} />
   <div className="container">
       <Routes>
-      <Route path="/" element={<MainPage />} />
+      <Route path="/" element={<MainPage point={point} />} />
       <Route path="/reg" element={<RegPage />} />
       <Route path="/login" element={<AuthPage />} />
       <Route path="/account" element={<AccountPage />} />
@@ -26,6 +26,5 @@ return (  <>
       <Route path="/favorite" element={<FavoritePage />} />
       </Routes>
   </div>
-  <Footer/>
 </>)
 }
