@@ -23,7 +23,7 @@ export default function Layout({ initState }) {
   crossOrigin="anonymous"/>
         <script defer src="/app.js" />
         <script defer src="/vendor.js" />
-        <title>Document</title>
+        <title>Enjoy socks</title>
       </head>
       <body>
         <div id="root">
