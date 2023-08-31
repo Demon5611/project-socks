@@ -4,7 +4,6 @@ import DesignCard from '../UI/DesignCard';
 // import PaleteColor from '../UI/PaleteColor';
 
 export default function MainPage() {
-  const [allFiles, setAllFiles] = useState([]);
 
   const [img, setImg] = useState([])
   const [design, setDesign] = useState([])
