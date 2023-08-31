@@ -10,20 +10,19 @@ import FavoritePage from './Pages/FavoritePage';
 
 
 
-export default function App()
+export default function App({point})
 
 {
 return (  <>
     <Header   />
   <div className="container">
       <Routes>
-      <Route path="/" element={<MainPage />} />
+      <Route path="/" element={<MainPage point={point} />} />
       <Route path="/reg" element={<RegPage />} />
       <Route path="/auth" element={<AuthPage />} />
       <Route path="/basket" element={<BasketPage />} />
       <Route path="/favorite" element={<FavoritePage />} />
       </Routes>
   </div>
-  <Footer/>
 </>)
 }
