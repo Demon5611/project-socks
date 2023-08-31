@@ -6,7 +6,9 @@ import path from 'path';
 import jsxRender from './utils/jsxRender';
 import indexRouter from './routes/render/indexRouter';
 import authRegRouter from './routes/render/authRegRouter';
+import apiRouter from './routes/api/apiRouter';
 import regAuthRouter from './routes/api/regAuthRouter';
+
 
 
 
@@ -46,6 +48,7 @@ app.use((req, res, next) => {
 
 app.use('/', indexRouter);
 app.use('/', authRegRouter);
+app.use('/api', apiRouter)
 app.use('/api/auth', regAuthRouter);
 
 

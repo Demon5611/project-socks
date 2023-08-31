@@ -9,6 +9,8 @@ export default function Layout({ initState }) {
         <meta charSet="UTF-8" />
         <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link href='/css/index.css' rel='stylesheet' media='all'  />
+        <link rel='icon' href='/img/logo.png'/>
         <script src="https://unpkg.com/react-yandex-maps/dist/production/react-yandex-maps.umd.js" />
         <script
           type="text/javascript"
