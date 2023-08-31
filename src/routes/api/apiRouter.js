@@ -1,9 +1,30 @@
-// import express from 'express';
+import express from 'express';
 
-// const router = express.Router();
+const fs = require('fs/promises');
 
-// router.get('/', (req, res) => {
-//   res.json({ hello: 'world' });
-// });
+const router = express.Router();
 
-// export default router;
+router.get('/img', async (req, res) => {
+    try {
+      const images = await fs.readdir('public/img/customImg');
+      res.json(images);
+      console.log(images);
+    } catch (error) {
+      console.error(error);
+      res.sendStatus(500);
+    }
+  });
+  router.get('/design', async (req, res) => {
+    try {
+      const files = await fs.readdir('public/img/design');
+      console.log(files);
+      res.json(files);
+    } catch (error) {
+      console.error(error);
+      res.sendStatus(500);
+    }
+  });
+
+
+export default router;
+
