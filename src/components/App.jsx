@@ -7,19 +7,21 @@ import MainPage from './Pages/MainPage';
 import AuthPage from './Pages/AuthPage';
 import BasketPage from './Pages/BasketPage';
 import FavoritePage from './Pages/FavoritePage';
+import AccountPage from './Pages/AccountPage';
 
 
 
-export default function App()
+export default function App({user})
 
 {
 return (  <>
-    <Header   />
+    <Header  user={user} />
   <div className="container">
       <Routes>
       <Route path="/" element={<MainPage />} />
       <Route path="/reg" element={<RegPage />} />
-      <Route path="/auth" element={<AuthPage />} />
+      <Route path="/login" element={<AuthPage />} />
+      <Route path="/account" element={<AccountPage />} />
       <Route path="/basket" element={<BasketPage />} />
       <Route path="/favorite" element={<FavoritePage />} />
       </Routes>

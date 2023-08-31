@@ -1,27 +1,27 @@
+import axios from 'axios';
 import React, { useState } from 'react';
 
+
 export default function RegPage() {
-  const [error, setError] = useState(null);
-  const submithandler = async (e) => {
-    e.preventDefault();
+  const [formData, setFormData] = useState({
+    email: '',
+    name: '',
+    password: '',
+    repeat: '',
+  });
 
-    const dataEntries = new FormData(e.target);
-    const dataObj = Object.fromEntries(dataEntries);
+  const changeHandler = (e) =>
+    setFormData((prev) => ({ ...prev, [e.target.name]: e.target.value }));
 
-    const response = await fetch('/api/reg', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify(dataObj),
-    });
-
-    const data = await response.json();
-
-    if (response.ok) {
-      window.location = '/';
-    } else {
-      setError(data.message);
+  const submithandler = async (event) => {
+    event.preventDefault();
+    if (formData.password !== formData.repeat) {
+      alert('Passwords do not match');
+      return;
+    }
+    const response = await axios.post('/api/auth/reg', formData);
+    if (response.status === 200) {
+      window.location.href = '/';
     }
   };
   return (
@@ -33,8 +33,11 @@ export default function RegPage() {
             Введите ваш email
           </label>
           <input
-            name="email"
-            type="email"
+          value={formData.email}
+          onChange={changeHandler}
+          type="email"
+          name="email"
+          placeholder="Enter email"
             className="form-control"
             id="exampleInputEmail1"
             aria-describedby="emailHelp"
@@ -45,8 +48,11 @@ export default function RegPage() {
             Введите свое имя
           </label>
           <input
-            name="userName"
-            type="text"
+          value={formData.name}
+          onChange={changeHandler}
+          type="text"
+          name="name"
+          placeholder="Enter your name"
             className="form-control"
             id="exampleInputEmail1"
             aria-describedby="emailHelp"
@@ -57,8 +63,27 @@ export default function RegPage() {
             Придумайте пароль
           </label>
           <input
-            name="password"
-            type="password"
+          value={formData.password}
+          onChange={changeHandler}
+          type="password"
+          name="password"
+          placeholder="Password"
+            className="form-control"
+            id="exampleInputPassword1"
+          />
+        </div>
+        <div className="mb-3">
+          <label htmlFor="exampleInputPassword1" className="form-label" placeholder="***">
+            Повторите пароль
+          </label>
+          <input
+          value={formData.repeat}
+          onChange={changeHandler}
+          type="password"
+          name="repeat"
+          placeholder="Repeat password"
+          isValid={formData.password === formData.repeat && formData.repeat !== ''}
+          isInvalid={formData.password !== formData.repeat && formData.repeat !== ''}
             className="form-control"
             id="exampleInputPassword1"
           />
@@ -66,7 +91,7 @@ export default function RegPage() {
         <button type="submit" className="btn btn-primary">
           Зарегистрироваться
         </button>
-        {error && <p>{error}</p> }
+        {/* {error && <p>{error}</p> } */}
       </form>
     </div>
   );
