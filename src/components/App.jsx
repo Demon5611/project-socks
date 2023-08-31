@@ -11,7 +11,7 @@ import AccountPage from './Pages/AccountPage';
 
 
 
-export default function App({point})
+export default function App({user,point})
 
 {
 return (  <>
