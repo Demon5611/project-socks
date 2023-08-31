@@ -1,7 +1,15 @@
-import React from 'react'
+import React from 'react';
+import { Button, Card } from 'react-bootstrap';
+import FavoriteCards from './FavoriteCards';
 
-export default function MainPage() {
+export default function MainPage({card, example}) {
   return (
-    <h1>Главная страница</h1>
+
+    <Card style={{ width: '18rem' }} >
+    MAIN PAGE
+    </Card>
+
+
+
   )
 }
