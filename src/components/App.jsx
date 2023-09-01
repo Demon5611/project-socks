@@ -3,16 +3,13 @@ import { Route, Routes } from 'react-router-dom';
 import AuthPage from './Pages/AuthPage';
 import BasketPage from './Pages/BasketPage';
 import FavoritePage from './Pages/FavoritePage';
-import AccountPage from './Pages/AccountPage'
+import AccountPage from './Pages/AccountPage';
 import MainPage from './Pages/MainPage';
 import RegPage from './Pages/RegPage';
-import Header from './UI/Header'
+import Header from './UI/Header';
 
+export default function App({ card, example, user, basket, point }){
 
-
-export default function App()
-
-{
 return (  <>
     <Header   />
   <div className="container">
@@ -21,9 +18,10 @@ return (  <>
       <Route path="/reg" element={<RegPage />} />
       <Route path="/login" element={<AuthPage />} />
       <Route path="/account" element={<AccountPage />} />
-      <Route path="/basket" element={<BasketPage user={user} basket={basket} />} />
-      <Route path="/favorite" element={<FavoritePage example={example} />} />
+      <Route path="/basket" element={<BasketPage user={user} basket={basket}/>} />
+      <Route path="/favorite" element={<FavoritePage />} />
       </Routes>
+      <Footer point={point}/>
   </div>
 </>)
 }

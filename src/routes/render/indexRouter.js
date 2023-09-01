@@ -10,9 +10,6 @@ console.log(point, '<<<---------------');
   res.render('Layout', initState);
 });
 
-router.get('/basket', (req, res) => {
-  res.render('Layout' );
-})
 
 router.get('/favorite', (req, res) => {
   res.render('Layout' );
