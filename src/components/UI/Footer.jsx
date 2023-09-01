@@ -24,7 +24,7 @@ export default function Footer({ point }) {
          <div> <DustTwo point={point}/> </div>
         </div>
  </div>
-    <div className='team_name'> development "OkoloRAZRABOTKI" team ⓒ</div>
+    <div className='team_name'> Development "OkoloRAZRABOTKI" team ⓒ</div>
 </>
   )
 }
