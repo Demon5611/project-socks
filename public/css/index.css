@@ -27,3 +27,39 @@
 .navbar-brand{
     font-size: 30px;
 }
+
+
+ /* Senik footer */
+.footer{
+    display: flex;
+    justify-content: space-between;
+    background: linear-gradient(white, rgb(102, 144, 178));
+}
+.title{
+    font-weight: 600;
+    margin-left: 150px;
+}
+.footer_item{
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 27px;
+    line-height: 60px;
+}
+.footer_value{
+    margin-right: 150px;
+}
+.footer_name{
+    margin-left: 150px;
+}
+.map{
+    margin-right: 200px;
+}
+.ymap{
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 25px;
+}
+.team_name{
+    background-color: rgb(102, 144, 178);
+    text-align: center;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 25px;
+}
