@@ -1,21 +1,36 @@
-.test3{
+.wrapper{
     display: flex;
     justify-content: center;
 }
 
-.test {
-
-    background-color: green;
+.color {
+    /* z-index: -1; */
+    /* background-color: green; */
 }
 
-.test2{
+.sock{
     
     background-image: url(../img/socks.png);
     width: 600px;
     height: 600px;
-    /* background-size: cover;   */
     background-size: contain; 
 }
+
+.design{
+
+    /* background-image: url(../img/design/3.png); */
+    background-size:100%; 
+}
+.img{
+    position: relative;
+    background-size:6rem; 
+    top: 125px;
+    left: 290px;
+    width: 100px;
+    height: 100px;
+    /* background-image: url(../img/customImg/yodu.png); */
+}
+
 #logo{
     width: 100px;
     margin-right: 20px;

@@ -1,6 +1,5 @@
 import express from 'express';
-import { rmSync } from 'fs';
-import {Socks} from '../../../db/models'
+import { Socks } from '../../../db/models';
 
 const fs = require('fs/promises');
 
@@ -24,6 +23,22 @@ router.get('/img', async (req, res) => {
     } catch (error) {
       console.error(error);
       res.sendStatus(500);
+    }
+  });
+  router.post('/custom', async (req, res) => {
+    try {
+      const { design, img, color } = req.body;
+      console.log(req.body);
+      // Проверяем наличие необходимых данных
+      if (!design || !img || !color) {
+        return res.status(400).json({ message: 'Недостаточно данных для создания объекта' });
+      }
+  
+      const newSocks = await Socks.create({ design, img, color });
+      return res.json(newSocks);
+    } catch (error) {
+      console.error(error);
+      return res.sendStatus(500);
     }
   });
 
