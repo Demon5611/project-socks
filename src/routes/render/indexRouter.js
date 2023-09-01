@@ -6,8 +6,8 @@ const router = express.Router();
 router.get('/', async (req, res) => {
 const point = await Map.findOne({where: {id: 1}});
 console.log(point, '<<<---------------');
-  const initState = {point};
-  res.render('Layout' initState);
+  const initState = {};
+  res.render('Layout', initState);
 });
 
 router.get('/basket', (req, res) => {

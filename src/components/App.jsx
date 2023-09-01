@@ -3,6 +3,10 @@ import { Route, Routes } from 'react-router-dom';
 import AuthPage from './Pages/AuthPage';
 import BasketPage from './Pages/BasketPage';
 import FavoritePage from './Pages/FavoritePage';
+import AccountPage from './Pages/AccountPage'
+import MainPage from './Pages/MainPage';
+import RegPage from './Pages/RegPage';
+import Header from './UI/Header'
 
 
 
