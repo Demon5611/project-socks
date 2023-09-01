@@ -1,6 +1,7 @@
 import express from 'express';
-import {Socks} from '../../../db/models'
 import { rmSync } from 'fs';
+import {Socks} from '../../../db/models'
+
 const fs = require('fs/promises');
 
 const router = express.Router();
@@ -26,21 +27,11 @@ router.get('/img', async (req, res) => {
     }
   });
 
-  router.post('/', async(req,res)=>{
-    // const {color,img,design} = req.body
-    const socks = await Socks.create(req.body)
-    console.log('socks!!!',socks);
-    res.redirect('/basket')
-      
+  router.get('/basket', async(req,res)=>{
+    const sock = await Socks.findAll({where:{id:req.session?.user.id}
+      })
+ res.json(sock);  
   })
-  // router.get('/basket', async(req,res)=>{
-  //   // const {color,img,design} = req.body
-  //   const socks = await Socks.findOne(where:{
-
-  //   })
-
-      
-  // })
 
 
 
