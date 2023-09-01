@@ -23,6 +23,7 @@ export default function MainPage() {
       .catch(error => {
         console.error(error);
       });
+      alert('Добавлено в корзину!');
   };
 
 
@@ -35,42 +36,43 @@ export default function MainPage() {
             <div className="sock">
               <div className='img'  style={{ backgroundImage: `url(../img/customImg/${imgBackground})` }} />
               <button  className='btn-custom' onClick={makeCustom} type='submit'>Сделать кастом</button>
+              {/* <img src='/img/favorite.svg'  alt='favorite'/>  */}
             </div>
           </div>
         </div>
       </div>
               {/* цвет носкаe */}
-      <button onClick={closeColorClick} type="button">Color</button>
+      <button className='knopka' onClick={closeColorClick} type="button">Выбери цвет!</button>
       {click && (
         <>
       <SketchPicker
       color={currentColor}
       onChangeComplete={handleOnChange}
       />
-      <button onClick={closeColorClick} type="button">Закрыть</button>
+      <button className='knopka' onClick={closeColorClick} type="button">Закрыть</button>
       </>
       )}
 
         {/* Выбор картинки */}
-      <button onClick={imgHandler} type="button">Click</button>
+      <button className='knopka' onClick={imgHandler} type="button">Выбери принт!</button>
       {showImgContent && (
         <>
           {Array.isArray(img) && img.map((el) => (
             <ImgCard imgOntouch={imgOntouch} key={el.id} img={el} />
           ))}
-          <button onClick={closeImgContent} type="button">Закрыть</button>
+          <button className='knopka' onClick={closeImgContent} type="button">Закрыть</button>
         </>
       )}
 
 
       {/* Выбор дизайна */}
-      <button onClick={designHandler} type="button">design</button>
+      <button className='knopka' onClick={designHandler} type="button">Выбери узор!</button>
       {showDesignContent && (
         <>
           {Array.isArray(design) && design.map((el) => (
             <DesignCard key={el.id} img={el} designOntouch={designOntouch} />
           ))}
-          <button onClick={closeDesignContent} type="button">Закрыть</button>
+          <button className='knopka' onClick={closeDesignContent} type="button">Закрыть</button>
         </>
       )}
     </>

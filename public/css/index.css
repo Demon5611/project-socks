@@ -31,7 +31,7 @@
     /* background-image: url(../img/customImg/yodu.png); */
 }
 
-#logo{
+.logo{
     width: 100px;
     margin-right: 20px;
 }
@@ -42,3 +42,41 @@
 .navbar-brand{
     font-size: 30px;
 }
+
+.btn-custom{
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 0px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 10px;
+    width: 150px;
+    height: 40px;
+
+}
+.btn-custom:hover{
+    background-color: #1276e0;
+}
+
+.btn-custo:active {
+    background-color: #3c0080;
+  }
+
+  .knopka{
+    background-color: #007bff;
+    padding: 0px;
+    margin: 40px;
+    font-size: 24px;
+    cursor: pointer;
+    border-radius: 10px;
+    height: 40px;
+    margin: 10px;
+  }
+  .knopka:hover{
+    background-color: #1276e0;
+}
+
+.knopka:active {
+    background-color: #3c0080;
+  }

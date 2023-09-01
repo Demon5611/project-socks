@@ -7,6 +7,7 @@ import AccountPage from './Pages/AccountPage';
 import MainPage from './Pages/MainPage';
 import RegPage from './Pages/RegPage';
 import Header from './UI/Header';
+import Footer from './UI/Footer';
 
 export default function App({ card, example, user, basket, point }){
 
