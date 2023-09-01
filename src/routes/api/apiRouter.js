@@ -1,5 +1,5 @@
 import express from 'express';
-
+import {Socks} from '../../../db/models'
 const fs = require('fs/promises');
 
 const router = express.Router();
@@ -24,6 +24,13 @@ router.get('/img', async (req, res) => {
       res.sendStatus(500);
     }
   });
+
+  router.post('/', async(req,res)=>{
+    // const {color,img,design} = req.body
+    const socks = await Socks.create(req.body)
+    console.log('socks!!!',socks);
+    
+  })
 
 
 export default router;
