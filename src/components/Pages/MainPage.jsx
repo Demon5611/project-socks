@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { SketchPicker } from 'react-color';
 import axios from 'axios';
+import { Col, Row } from 'react-bootstrap';
 import ImgCard from '../UI/ImgCard';
 import DesignCard from '../UI/DesignCard';
 import useCustom from '../../customHoock/useCustom';
@@ -49,39 +50,54 @@ export default function MainPage({user}) {
         </div>
       </div>
               {/* цвет носкаe */}
+        <div className='papaknopki'> 
+
+<div>
       <button className='knopka' onClick={closeColorClick} type="button">Выбери цвет!</button>
+      <button className='knopka' onClick={imgHandler} type="button">Выбери принт!</button>
+      <button className='knopka' onClick={designHandler} type="button">Выбери узор!</button>
+</div>
+
+<div>
       {click && (
-        <>
+      <div>
+
       <SketchPicker
       color={currentColor}
       onChangeComplete={handleOnChange}
       />
       <button className='knopka' onClick={closeColorClick} type="button">Закрыть</button>
-      </>
+      </div>
       )}
 
         {/* Выбор картинки */}
-      <button className='knopka' onClick={imgHandler} type="button">Выбери принт!</button>
       {showImgContent && (
-        <>
+        <Row>
+
           {Array.isArray(img) && img.map((el) => (
+            <Col>
             <ImgCard imgOntouch={imgOntouch} key={el.id} img={el} />
-          ))}
+            </Col>
+            ))}
           <button className='knopka' onClick={closeImgContent} type="button">Закрыть</button>
-        </>
+            </Row>
       )}
 
 
       {/* Выбор дизайна */}
-      <button className='knopka' onClick={designHandler} type="button">Выбери узор!</button>
       {showDesignContent && (
-        <>
+        <Row>
           {Array.isArray(design) && design.map((el) => (
+            <Col>
             <DesignCard key={el.id} img={el} designOntouch={designOntouch} />
-          ))}
-          <button className='knopka' onClick={closeDesignContent} type="button">Закрыть</button>
-        </>
+            </Col>
+            ))}
+      <button className='knopka' onClick={closeDesignContent} type="button">Закрыть</button>
+        </Row>
       )}
+      </div>
+      </div>
     </>
+    
   );
 }

@@ -42,10 +42,6 @@ function Header({user}) {
             <a className="nav-link active" aria-current="page" href="/login">Auth</a>
           </li>
           </>)}
-
-
-
-
           </ul>
             </div>
       </div>

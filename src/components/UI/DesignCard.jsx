@@ -5,7 +5,7 @@ export default function DesignCard({ img, designOntouch}) {
     <div>
       <div className="card" style={{ width: '10rem' }}>
         <img className="card-img-top" src={`/img/design/${img}`} alt="Card" style={{ width: '100%' }} />
-        <button onClick={()=>designOntouch(img)} type="button">Click</button>
+        <button className='knopka' onClick={()=>designOntouch(img)} type="button">Выбрать</button>
       </div>
     </div>
   );

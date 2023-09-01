@@ -22,7 +22,7 @@ return (  <>
       <Route path="/basket" element={<BasketPage user={user} basket={basket}/>} />
       <Route path="/favorite" element={<FavoritePage />} />
       </Routes>
-      <Footer point={point}/>
   </div>
+  <Footer point={point} />
 </>)
 }

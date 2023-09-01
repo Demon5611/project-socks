@@ -9,7 +9,6 @@ export default function DustTwo({point}) {
   }
     const yMap = () => (
         <YMaps>
-          <div>Мы на Яндекс.Картах</div>
           <Map defaultState={{ center: [55.747540, 37.706840], zoom: 10 }} >
           <Placemark  onClick={clickHandler} defaultGeometry={[point?.latitude, point?.longitude]} />
             </Map>
