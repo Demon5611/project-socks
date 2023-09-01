@@ -15,14 +15,14 @@ return (  <>
     <Header  user={user} />
   <div className="container">
       <Routes>
-      <Route path="/" element={<MainPage point={point} />} />
+      <Route path="/" element={<MainPage user={user} />} />
       <Route path="/reg" element={<RegPage />} />
       <Route path="/login" element={<AuthPage />} />
       <Route path="/account" element={<AccountPage />} />
       <Route path="/api/basket" element={<BasketPage user={user} socks={socks}/>} />
       <Route path="/favorite" element={<FavoritePage />} />
       </Routes>
-      <Footer point={point}/>
   </div>
+  <Footer point={point} />
 </>)
 }

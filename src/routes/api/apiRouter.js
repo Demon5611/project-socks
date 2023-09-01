@@ -1,5 +1,7 @@
 import express from 'express';
 import { Socks } from '../../../db/models';
+import authCheck from '../../middlewares/authCheck';
+
 
 const fs = require('fs/promises');
 
