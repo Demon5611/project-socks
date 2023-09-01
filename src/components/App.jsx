@@ -11,7 +11,7 @@ import AccountPage from './Pages/AccountPage';
 
 
 
-export default function App({point})
+export default function App({user, point})
 
 {
 return (  <>
@@ -25,6 +25,7 @@ return (  <>
       <Route path="/basket" element={<BasketPage />} />
       <Route path="/favorite" element={<FavoritePage />} />
       </Routes>
+      <Footer point={point}/>
   </div>
 </>)
 }
