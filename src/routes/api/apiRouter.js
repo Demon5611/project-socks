@@ -42,5 +42,13 @@ router.get('/img', async (req, res) => {
     }
   });
 
+  router.get('/basket', async(req,res)=>{
+    const sock = await Socks.findAll({where:{id:req.session?.user.id}
+      })
+ res.json(sock);  
+  })
+
+
+
 export default router;
 
