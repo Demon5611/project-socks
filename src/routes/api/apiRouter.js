@@ -44,11 +44,30 @@ router.get('/img', async (req, res) => {
     }
   });
 
+//   router.get('/basket', async(req,res)=>{
+//     const socks = await Socks.findAll({where:{id:req.session?.user.id}
+//       })
+//  res.json(socks);  
+//   })
   router.get('/basket', async(req,res)=>{
-    const sock = await Socks.findAll({where:{id:req.session?.user.id}
+    const socks = await Socks.findAll({where:{id:req.session?.user.id}
       })
- res.json(sock);  
-  })
+      console.log(socks,`rrrrrrrrrrrrrrrrrrrrrrrr`);
+       const initState = { socks };
+
+      res.render('Layout', initState);
+    });
+
+    router.delete('/:id', async (req, res) => {
+      try {
+        await Socks.destroy({ where: { id: req.params.id } });
+        return res.sendStatus(200);
+      } catch (err) {
+        return res.sendStatus(500);
+      }
+    });
+
+
 
 
 

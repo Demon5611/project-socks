@@ -32,7 +32,7 @@ function Header({user}) {
                                 <a className="nav-link active" aria-current="page" href="/favorite">Избранное</a>
                               </li>
                               <li className="nav-item">
-                                <a className="nav-link active" aria-current="page" href="/basket">Корзина</a>
+                                <a className="nav-link active" aria-current="page" href="/api/basket">Корзина</a>
                               </li>
                               </> ):(<>
             <li className="nav-item">

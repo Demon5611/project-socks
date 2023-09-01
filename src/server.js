@@ -54,4 +54,5 @@ app.use('/api/auth', regAuthRouter);
 
 
 
+
 app.listen(PORT, () => console.log(`App has started on port ${PORT}`));
