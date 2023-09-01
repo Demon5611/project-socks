@@ -47,9 +47,10 @@ app.use((req, res, next) => {
 });
 
 app.use('/', indexRouter);
-app.use('/', authRegRouter);
+// app.use('/', authRegRouter);
 app.use('/api', apiRouter)
 app.use('/api/auth', regAuthRouter);
+
 
 
 
