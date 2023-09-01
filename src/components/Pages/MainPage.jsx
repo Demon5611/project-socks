@@ -6,7 +6,7 @@ import ImgCard from '../UI/ImgCard';
 import DesignCard from '../UI/DesignCard';
 import useCustom from '../../customHoock/useCustom';
 
-export default function MainPage() {
+export default function MainPage({user}) {
   const { imgHandler, designHandler, closeImgContent, closeDesignContent, img, design, showImgContent, showDesignContent, currentColor, handleOnChange, backgrondColor, designBackground, imgBackground, designOntouch, imgOntouch,  click, closeColorClick} = useCustom();
   const makeCustom = () => {
     // Создаем объект с данными, которые будут отправлены в запросе
@@ -30,12 +30,20 @@ export default function MainPage() {
 
   return (
     <>
+      <h1>{user &&`${ user.name},`} Добро пожаловать в магазин кастомных носков - Enjoy Socks!</h1>
       <div className="wrapper">
         <div className="color" style={backgrondColor}>
           <div className='design' style={{ backgroundImage: `url(../img/design/${designBackground})` }} >
             <div className="sock">
               <div className='img'  style={{ backgroundImage: `url(../img/customImg/${imgBackground})` }} />
-              <button  className='btn-custom' onClick={makeCustom} type='submit'>Создать</button>
+              {!user ? (
+                <button  className='btn-custom' onClick={() => {
+                  alert('Друг, пожалуйста, авторизуйся!');
+                  window.location.href = '/login';
+                }} type='submit'>Сделать кастом</button>
+                ):(
+              <button  className='btn-custom' onClick={makeCustom} type='submit'>Сделать кастом</button>
+              )}
               {/* <img src='/img/favorite.svg'  alt='favorite'/>  */}
             </div>
           </div>

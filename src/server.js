@@ -8,6 +8,7 @@ import indexRouter from './routes/render/indexRouter';
 import authRegRouter from './routes/render/authRegRouter';
 import apiRouter from './routes/api/apiRouter';
 import regAuthRouter from './routes/api/regAuthRouter';
+import authCheck from './middlewares/authCheck';
 
 
 
@@ -48,7 +49,7 @@ app.use((req, res, next) => {
 
 app.use('/', indexRouter);
 app.use('/', authRegRouter);
-app.use('/api', apiRouter)
+app.use('/api', authCheck(false),  apiRouter)
 app.use('/api/auth', regAuthRouter);
 
 
