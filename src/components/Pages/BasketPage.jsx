@@ -21,6 +21,7 @@ export default function BasketItem({ card })
             width: '15%',
           }}
         >
+          
           <FavoriteCards card={el} />
         </div>
       ))}
