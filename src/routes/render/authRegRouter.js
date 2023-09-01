@@ -1,13 +1,13 @@
 import express from 'express';
+import authCheck from '../../middlewares/authCheck';
 
-const render = express.Router();
 
-render.get('/reg', (req, res) => {
-    res.render('Layout')
-})
+const indexRouter = express.Router();
 
-render.get('/auth', (req, res) => {
-    res.render('Layout')
-})
+indexRouter.get('/reg', authCheck(false), (req, res) => res.render('Layout'));
 
-export default render
+indexRouter.get('/login', authCheck(false), (req, res) => res.render('Layout'));
+
+indexRouter.get('/account', authCheck(true), (req, res) => res.render('Layout'));
+
+export default indexRouter
